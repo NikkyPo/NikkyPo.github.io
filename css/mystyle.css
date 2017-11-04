@@ -1,0 +1,26 @@
+/* mystyle.css*/
+
+#mapdiv {
+	height: 750px;
+	/*background-color: #2e2e2e*/
+}
+#footer {
+	height: 60px;
+	background-color: #717375;
+}
+.merriweather {
+	font-family: 'Merriweather Sans', sans-serif;
+}
+.switch-list:hover {  
+	color:black;
+	background-color: #ffa12d;
+}
+.navbar-default {
+	background-color: #fff;
+	border-color: #fff;
+	height: 60px;
+}
+.navbar-nav {
+	font-family: 'Merriweather Sans', sans-serif;
+	padding: 10px 50px;
+}
