@@ -15,12 +15,13 @@
 	color:black;
 	background-color: #ffa12d;
 }
-.navbar-default {
+.navbar-brand {
 	background-color: #fff;
 	border-color: #fff;
-	height: 60px;
+	font-family: 'Merriweather Sans', sans-serif;
 }
 .navbar-nav {
+	background-color: #fff;
+	border-color: #fff;
 	font-family: 'Merriweather Sans', sans-serif;
-	padding: 10px 50px;
 }
