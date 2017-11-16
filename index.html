@@ -12,6 +12,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- Jquery script -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+		<script src="https://unpkg.com/esri-leaflet@2.0.4/dist/esri-leaflet.js"></script>
+		<script src="https://unpkg.com/esri-leaflet-renderers@2.0.2/dist/esri-leaflet-renderers.js"></script>  
 		
 	</head>
 	<body>
@@ -52,8 +54,8 @@
 		var mymap=L.map("mapdiv")
 		mymap.setView([46.2, -94.6], 7); //Leaflet method that sets the view for the map.
 
-		var map = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"); //Tile layer from open street maps, but uses Leaflet method
-		mymap.addLayer(map);
+		var cartoMap = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png").addTo(mymap); //Tile layer from open street maps, but uses Leaflet method
+		// mymap.addLayer(map);
 
 		function myFunction() {
 			var x = document.getElementById("myTopnav");
@@ -63,6 +65,12 @@
 				x.className = "topnav";
 			}
 		}
+        var survey123 = L.esri.featureLayer({url: 'https://services.arcgis.com/8df8p0NlLFEShl0r/ArcGIS/rest/services/service_06ab2e3e9f484ba3aaecb037631b3367/FeatureServer/0'}).addTo(mymap);
+
+        survey123.bindPopup(function(evt) {
+            return L.Util.template('<h3>{project_name}</h3><hr /><p>This tree is located at {categories} and its scientific name is {email}.', evt.feature.properties);
+        }); 
+
 	</script>
 	</body>
 </html>
