@@ -4,6 +4,7 @@
 		<title>Minnesota Food Charter</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		
 		<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet"> <!-- Google stylesheet -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- Bootstrap stylesheet-->
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" > <!-- Leaflet stylesheet and script -->
@@ -38,21 +39,20 @@
 		</nav>
 
 	<div id="side=panel" class="col-sm-3">
-		<button id="zoomToMn" class="btn switch-list form-control">Zoom to Minnesota</button>
+		<button id="zoomToMn" class="btn switch-list">Zoom to Minnesota</button>
+		<a href="https://survey123.arcgis.com/share/22e7b88e53cf4c2a81b93ea308bb792a" target="_blank"><img src="img/addpoint.png" alt="survey123" width="94" height="40"></a>
+
 	</div>
 
 	<div id="mapdiv" class="col-sm-9"></div>
 
-	<div id="footer" class="col-sm-12">
-		<h5 class="text-center merriweather"> Map Author: Nicole Helgeson</h5>
-
 	</div>
 	<script>
 		$("#zoomToMn").click(function(){
-			mymap.setView([46.2, -94.6], 7);
+			mymap.setView([46.2, -94.6], 6);
 		});
 		var mymap=L.map("mapdiv")
-		mymap.setView([46.2, -94.6], 7); //Leaflet method that sets the view for the map.
+		mymap.setView([46.2, -94.6], 6); //Leaflet method that sets the view for the map.
 
 		var cartoMap = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png").addTo(mymap); //Tile layer from open street maps, but uses Leaflet method
 		// mymap.addLayer(map);
@@ -65,10 +65,25 @@
 				x.className = "topnav";
 			}
 		}
+
+		var mnCounty = L.esri.featureLayer({
+			url:'http://services.arcgis.com/8df8p0NlLFEShl0r/ArcGIS/rest/services/MN_Counties_NetworkCount/FeatureServer/0',
+			style: function(feature) {
+				return {
+					fillColor: "#FFFFFF",
+					fillOpacity: 0,
+					opacity: 1,
+					color: "grey",
+					weight: 1
+				};
+			}
+	        }).addTo(mymap).bringToFront();
+
+
         var survey123 = L.esri.featureLayer({url: 'https://services.arcgis.com/8df8p0NlLFEShl0r/ArcGIS/rest/services/service_06ab2e3e9f484ba3aaecb037631b3367/FeatureServer/0'}).addTo(mymap);
 
         survey123.bindPopup(function(evt) {
-            return L.Util.template('<h3>{project_name}</h3><hr /><p>This tree is located at {categories} and its scientific name is {email}.', evt.feature.properties);
+            return L.Util.template('<h4>{project_name}</h4><hr /><div><strong>Project Categories:</strong>{categories}</div><div><strong>Contact Information:</strong>{contact}</div><div>{email}</div>', evt.feature.properties);
         }); 
 
 	</script>

@@ -1,7 +1,10 @@
 /* mystyle.css*/
+html, body {
+	height: 100%;
+}
 
 #mapdiv {
-	height: 750px;
+	height: 100%;
 	/*background-color: #2e2e2e*/
 }
 #footer {
@@ -11,9 +14,14 @@
 .merriweather {
 	font-family: 'Merriweather Sans', sans-serif;
 }
-.switch-list:hover {  
-	color:black;
+.switch-list {
+    color: white;  
 	background-color: #ffa12d;
+}
+
+.switch-list:hover {  
+	color:grey;
+	background-color: #ffc072;
 }
 .navbar-brand {
 	background-color: #fafafa;
