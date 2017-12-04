@@ -19,14 +19,13 @@
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
-		 	<div class="container-fluid">          
 		     <div class="navbar-header">
 		        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		        </button>
-		        <a href="#" class="navbar-brand"><img alt="Brand" src="img/mfclogo.png" style="height: 30px"></a>
+		        <a href="#" class="navbar-brand"><img style="max-width:200px;" alt="Brand" src="img/mfclogo.png"></a>
 		    </div>
 		    <div class="collapse navbar-collapse" id="mainNavBar">
 		         <ul class="nav navbar-nav navbar-right">
@@ -35,7 +34,6 @@
 		            <li><a href="feedback.html">Feedback</a></li>
 		        </ul>  
 		     </div>
-		 </div>
 		</nav>
 
 	<div id="side=panel" class="col-sm-3">
@@ -51,11 +49,10 @@
 		$("#zoomToMn").click(function(){
 			mymap.setView([46.2, -94.6], 6);
 		});
-		var mymap=L.map("mapdiv")
-		mymap.setView([46.2, -94.6], 6); //Leaflet method that sets the view for the map.
+		var mymap = L.map("mapdiv")
+		var mapView = mymap.setView([46.2, -94.6], 6); //Leaflet method that sets the view for the map.
 
 		var cartoMap = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png").addTo(mymap); //Tile layer from open street maps, but uses Leaflet method
-		// mymap.addLayer(map);
 
 		function myFunction() {
 			var x = document.getElementById("myTopnav");
@@ -67,7 +64,9 @@
 		}
 
 		var mnCounty = L.esri.featureLayer({
-			url:'https://services.arcgis.com/8df8p0NlLFEShl0r/ArcGIS/rest/services/MN_Counties_NetworkCount/FeatureServer/0',
+			url:'http://services.arcgis.com/8df8p0NlLFEShl0r/ArcGIS/rest/services/MN_Counties_NetworkCount/FeatureServer/0',
+			simplifyFactor: 0.5,
+			precision: 5,
 			style: function(feature) {
 				return {
 					fillColor: "#FFFFFF",
@@ -77,15 +76,15 @@
 					weight: 1
 				};
 			}
-	        }).addTo(mymap).bringToFront();
 
+	        }).addTo(mymap).bringToFront();
 
         var survey123 = L.esri.featureLayer({url: 'https://services.arcgis.com/8df8p0NlLFEShl0r/ArcGIS/rest/services/service_06ab2e3e9f484ba3aaecb037631b3367/FeatureServer/0'}).addTo(mymap);
 
         survey123.bindPopup(function(evt) {
-            return L.Util.template('<h4>{project_name}</h4><hr /><div><strong>Project Categories:</strong>{categories}</div><div><strong>Contact Information:</strong>{contact}</div><div>{email}</div>', evt.feature.properties);
-        }); 
-
+            return L.Util.template(
+            	'<h4>{project_name}</h4><hr/><div><strong>Location: </strong>{geodescription}<br><br></div><div><strong>About the project:</strong>{description}</div><div><br><strong>Contact Information:</strong><br>Contact: {contact} <br>Email: {email}<br>Organization: {organization}<br>Website: {website}</div><br><div><strong>Connected to Food Network? </strong>{connected} {connectedResult}</div><br><div><strong>Work Focus: </strong>Food {categories}</div><br>', evt.feature.properties);
+        });
 	</script>
 	</body>
 </html>
