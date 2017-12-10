@@ -19,7 +19,7 @@
 		<script src="js/L.Control.HtmlLegend.js"></script>  
 		
 	</head>
-	<body>
+	<body id="page3">
 		<nav class="navbar navbar-default">
 		     <div class="navbar-header">
 		        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
@@ -38,19 +38,21 @@
 		        </ul>  
 		     </div>
 		</nav>
-
-	<blockquote><h3><strong>Log In</strong></h3><br>
-	<p>Once logged in you will be able to add and edit data in the Minnesota Food Charter map.</p>
-	<p>Don't have an account? Register here. </blockquote><br>
-
-	<form><blockquote>
-		<div><label for="username">Username</label>
-	        <input id="username" type="text" placeholder="your username" name="username" required><br>
-                <label for="passwords">Password</label>
+    <form>
+    	<div>
+    		<h3><strong>Log In</strong></h3><br>
+    		<p>Once logged in you will be able to add and edit data in the Minnesota Food Charter map.</p>
+    		<p>Don't have an account? Register here.<br>
+    		</p>
+    	</div>
+		<div>
+			<label for="username">Username</label>
+			<input id="username" type="text" placeholder="your username" name="username" required><br>
+			<label for="passwords">Password</label>
 	        <input pattern=".{5,10}" required title="5 to 10 characters" id="passwords" type="password" placeholder="your password" name="password" required>
         </div>
 
-    </blockquote></form>
+    </form>
 	<script>
 
 	</script>

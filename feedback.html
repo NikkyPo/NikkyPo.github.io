@@ -15,11 +15,10 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
 		<script src="https://unpkg.com/esri-leaflet@2.0.4/dist/esri-leaflet.js"></script>
-		<script src="https://unpkg.com/esri-leaflet-renderers@2.0.2/dist/esri-leaflet-renderers.js"></script>
-		<script src="js/L.Control.HtmlLegend.js"></script>  
+		<script src="https://unpkg.com/esri-leaflet-renderers@2.0.2/dist/esri-leaflet-renderers.js"></script> 
 		
 	</head>
-	<body>
+	<body id="page4">
 		<nav class="navbar navbar-default">
 		     <div class="navbar-header">
 		        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
@@ -39,48 +38,59 @@
 		     </div>
 		</nav>
 
-		<blockquote><h3>Thank you for visiting! We are seeking rigorous feedback at the stage so that we can make improvements to this brand new tool.</h3><br>
+	<form>
+	<h3>Thank you for visiting! We are seeking rigorous feedback at the stage so that we can make improvements to this brand new tool.</h3><br>
 
-			<form>
-	<div><label>Please describe your connection to food systems in Minnesota and / or the Minnesota Food Charter Network.<br><input type="text" placeholder="" name="connection" required>
-    </label></div><br>
+	<div>
+		<h4>Please describe your connection to food systems in Minnesota and / or the Minnesota Food Charter Network.<br><input type="text" placeholder="" name="connection" required>
+		</h4>
+	</div>
+	<br>
 
-	<div><label>How would you rate your experience using the map today?</label><br>
-	<label for="poor">Poor</label>
-	    <input id="poor" type="radio" name="rating" value="1"><br>
-	<label for="average">Average</label>
+	<div>
+		<h4>How would you rate your experience using the map today?</h4>
+		<label for="poor">Poor</label>
+		<input id="poor" type="radio" name="rating" value="1"><br>
+		<label for="average">Average</label>
 	    <input id="average" type="radio" name="rating" value="2"></div>
-	<label for="good">Good</label>
+	    <label for="good">Good</label>
 	    <input id="good" type="radio" name="rating" value="3"></div><br>
-	<label for="excellent">Excellent</label>
-	    <input id="excellent" type="radio" name="rating" value="4"></div><br><br>
+	    <label for="excellent">Excellent</label>
+	    <input id="excellent" type="radio" name="rating" value="4">
+	</div><br><br>
 
-
-	<div><label>How did you use the map today?</label><br>
-	<label for="points">Added my work to the map using the survey</label>
+	<div>
+		<h4>How did you use the map today?</h4>
+		<label for="points">Added my work to the map using the survey</label>
 	    <input id="points" type="checkbox" name="use" value="1"><br>
-	<label for="view">Viewed datapoints on the map.</label>
+	    <label for="view">Viewed datapoints on the map.</label>
 	    <input id="view" type="checkbox" name="use" value="2"></div>
-	<label for="find">Zoomed in and out on the map</label>
+	    <label for="find">Zoomed in and out on the map</label>
 	    <input id="find" type="checkbox" name="use" value="3"></div><br>
-	<label for="look">Looked at the About section</label>
+	    <label for="look">Looked at the About section</label>
 	    <input id="look" type="checkbox" name="use" value="4"></div><br>
-	<label for="other">Other:</label>
-	    <input id="other" type="text" name="use"></div><br><br>
+	    <label for="other">Other:</label>
+	    <input id="other" type="text" name="use">
+	</div><br><br>
 
-	<div><label>What did you like about the map?<br><input type="text" placeholder="" name="like" required>
-    </label></div><br>
+	<div>
+		<h4>What did you like about the map?<br>
+			<input type="text" placeholder="" name="like" required>
+		</h4>
+	</div><br>
 
-	<div><label>What did you NOT like about the map?<br><input type="text" placeholder="" name="dislike" required>
-    </label></div><br>
+	<div>
+		<h4>What did you NOT like about the map?<br><input type="text" placeholder="" name="dislike" required>
+		</h4>
+	</div><br>
 
-	<div><label>How could the map be more useful to you?<br><input type="text" placeholder="" name="useful" required>
-    </label></div><br>
+	<div>
+		<h4>How could the map be more useful to you?<br><input type="text" placeholder="" name="useful" required>
+		</h4>
+	</div><br>
 
 <button>Submit</button> <!-- If button is last in form, it will be a submit button -->
 </form>
-
-		</blockquote>
 
 	<script>
 

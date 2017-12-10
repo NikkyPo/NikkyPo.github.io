@@ -1,11 +1,11 @@
 /* mystyle.css*/
 html, body {
 	height: 100%;
+	background: #ffffff;
 }
 
 #mapdiv {
 	height: 100%;
-	/*background-color: #2e2e2e*/
 }
 .merriweather {
 	font-family: 'Merriweather Sans', sans-serif;
@@ -32,11 +32,16 @@ html, body {
 	position: relative;
     top: 15px;
 }
-
  .navbar-brand img {
  	resize: both;
 	width: 100%;
 }
 .navbar-toggle {
 	margin-top: 17px;
+}
+#page4 form {
+	margin-left: 20px;
+}
+#page3 form {
+	margin-left: 20px;
 }
