@@ -39,9 +39,9 @@ html, body {
 .navbar-toggle {
 	margin-top: 17px;
 }
-#page4 form {
-	margin-left: 20px;
+#feedback form {
+	margin: 5%;
 }
-#page3 form {
-	margin-left: 20px;
+#account form {
+	margin: 5%;
 }
