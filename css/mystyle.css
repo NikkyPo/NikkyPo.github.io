@@ -7,9 +7,6 @@ html, body {
 #mapdiv {
 	height: 100%;
 }
-.merriweather {
-	font-family: 'Merriweather Sans', sans-serif;
-}
 .switch-list {
     color: white;  
 	background-color: #ffa12d;
@@ -44,4 +41,15 @@ html, body {
 }
 #account form {
 	margin: 5%;
+}
+#about form {
+	margin: 5%;
+}
+#index img[src="img/legend.PNG"] {
+	float: left;
+	width: auto;
+}
+.mapfont {
+	font-family: 'Merriweather Sans', sans-serif;
+	height: auto;
 }

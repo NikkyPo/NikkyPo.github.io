@@ -39,19 +39,21 @@
 		     </div>
 		</nav>
 
-	<div id="side=panel" class="col-sm-3">
-		<div>
-		<button id="zoomToMn" class="btn switch-list">Zoom to Minnesota</button>
-		<a href="https://survey123.arcgis.com/share/22e7b88e53cf4c2a81b93ea308bb792a" target="_blank"><img src="img/addpoint.png" alt="survey123" width="94" height="40"></a>
-		</div><br>
-		<div>
-			<img src="img/legend.PNG">
+		<div id="side-panel" class="col-xs-3">
+			<h4 class="mapfont"> Welcome to the Minnesota Food Charter Strategy Implementation Map! </h4>
+			<div>
+			<button id="zoomToMn" class="btn switch-list">Zoom Home</button><br><br>
+			<a href="https://survey123.arcgis.com/share/22e7b88e53cf4c2a81b93ea308bb792a" class="btn switch-list" target="_blank"><img src="img/addpoint.png" alt="survey123" width="94" height="40"></a>
+			</div>
+			<br>
+			<div>
+				<img src="img/legend.PNG">
+			</div>
+	    </div>
+
+		<div id="mapdiv" class="col-xs-9"></div>
+
 		</div>
-    </div>
-
-	<div id="mapdiv" class="col-sm-9"></div>
-
-	</div>
 	<script>
 		$("#zoomToMn").click(function(){
 			mymap.setView([46.2, -94.6], 6);
