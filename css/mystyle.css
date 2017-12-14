@@ -10,6 +10,7 @@ html, body {
 .switch-list {
     color: white;  
 	background-color: #ffa12d;
+	padding-right: 5px;
 }
 
 .switch-list:hover {  
@@ -47,7 +48,6 @@ html, body {
 }
 #index img[src="img/legend.PNG"] {
 	float: left;
-	width: auto;
 }
 .mapfont {
 	font-family: 'Merriweather Sans', sans-serif;
