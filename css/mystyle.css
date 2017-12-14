@@ -10,7 +10,6 @@ html, body {
 .switch-list {
     color: white;  
 	background-color: #ffa12d;
-	padding-right: 5px;
 }
 
 .switch-list:hover {  
